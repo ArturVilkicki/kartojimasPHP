@@ -91,7 +91,7 @@ function print_links($nuorodos){
 }
 print_links($nuorodos);
 
-*/
+
 
 function format_number($t) {
 	return str_replace("+370", "8", $t);
@@ -105,6 +105,32 @@ $tel = "+370 688 77777";
 echo format_number($tel);
 echo "<br />";
 echo format_number_e ($tel);
+*/
+//9. parasyti funkcija, kuri parodytu, kiek liko dienu iki kaledu ir rugsejo pirmosios date(), mktime(), strtotime()
+date_default_timezone_set("Europe");
+function get_days($date) {
+	dienu_skaiciavimas = strtotime($date) - time()/60/60/24;
+	return floor(dienu_skaiciavimas);
+}
+echo get_days("1-9-2018");
+
+/*$cdate = mktime(0, 0, 0, 12, 31, 2017);
+$today = time();
+$difference = $cdate - $today;
+if ($difference < 0) { $difference = 0; }
+echo "There are ". floor($difference/60/60/24)." days remaining";
+
+$cdate = mktime(0, 0, 0, 9, 01, 2018);
+$today = time();
+$difference = $cdate - $today;
+if ($difference < 0) { $difference = 0; }
+echo "There are ". floor($difference/60/60/24)." days remaining";
+*/
+
+//function days_until($date){
+   // return (isset($date)) ? floor((strtotime($date) - time())/60/60/24) : FALSE;
+//}
+//echo days_until("1-9-2018");
 ?>
 </pre>
 
