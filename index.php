@@ -105,14 +105,10 @@ $tel = "+370 688 77777";
 echo format_number($tel);
 echo "<br />";
 echo format_number_e ($tel);
-*/
+
 //9. parasyti funkcija, kuri parodytu, kiek liko dienu iki kaledu ir rugsejo pirmosios date(), mktime(), strtotime()
 date_default_timezone_set("Europe");
-function get_days($date) {
-	dienu_skaiciavimas = strtotime($date) - time()/60/60/24;
-	return floor(dienu_skaiciavimas);
-}
-echo get_days("1-9-2018");
+
 
 /*$cdate = mktime(0, 0, 0, 12, 31, 2017);
 $today = time();
@@ -125,12 +121,23 @@ $today = time();
 $difference = $cdate - $today;
 if ($difference < 0) { $difference = 0; }
 echo "There are ". floor($difference/60/60/24)." days remaining";
+
+
+function days_until($date){
+   return (isset($date)) ? floor((strtotime($date) - time())/60/60/24) : FALSE;
+}
+echo days_until("24-12-2017");
 */
 
-//function days_until($date){
-   // return (isset($date)) ? floor((strtotime($date) - time())/60/60/24) : FALSE;
-//}
-//echo days_until("1-9-2018");
+$a = [0,1,3,7,2,5,6,8,9,10,11,12];
+sort($a);
+print_r($a);
+foreach ($a as $key => $value) {
+	if ($key != $value) {
+		echo "Truksta " . $key;
+		exit();
+	}
+}
 ?>
 </pre>
 
